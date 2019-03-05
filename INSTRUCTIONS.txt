@@ -1,0 +1,10 @@
+This technical test is divided in 3 sections:
+ - JS questions (20m): 5 open-ended questions.
+ - JS basic exercises (30m): where you have to implement some code to accomplish a requirement.
+ - Challenge: Create your own code to solve the problem.
+
+You'll find detailed instructions of each part inside its folder.
+
+Once you're done, compress it and send it to hr@xceed.me
+
+Good luck!

@@ -1,0 +1,11 @@
+This is the final step!
+You need to consume an API and layout the data as shown in the layout.png.
+You will have to use React & Redux for the state of the app.
+No need to implement the "Featured News" (we don't care about it).
+
+API Documentation: https://www.football-data.org/documentation/quickstart
+Endpoint for standings: http://api.football-data.org/v2/competitions/PD/standings
+Layout: layout.png (http://www.laliga.es/en/laliga-santander)
+
+
+*Bonus: implement sorting asc/desc through column headers clic.

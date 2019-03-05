@@ -1,0 +1,120 @@
+const users = [
+  {
+    "_id": "5a5e2d59e54805dce405d525",
+    "age": 15,
+    "name": "Roseann Gregory",
+    "gender": "female",
+    "email": "roseanngregory@musanpoly.com",
+    "credits": 0,
+    "friends": [
+      {
+        "id": 0,
+        "name": "Paula Reyes"
+      },
+      {
+        "id": 1,
+        "name": "Kirkland Macdonald"
+      },
+      {
+        "id": 2,
+        "name": "Cobb Ramos"
+      },
+      {
+        "id": 3,
+        "name": "Ortega Cooper"
+      },
+      {
+        "id": 4,
+        "name": "Snyder Benjamin"
+      }
+    ]
+  },
+  {
+    "_id": "5a5e2d59cf60e4a11fccc8b5",
+    "age": 34,
+    "name": "Baldwin Hutchinson",
+    "gender": "male",
+    "email": "baldwinhutchinson@musanpoly.com",
+    "credits": 0,
+    "friends": []
+  },
+  {
+    "_id": "5a5e2d594bd004dacc8dc6ab",
+    "age": 40,
+    "name": "Annette Coffey",
+    "gender": "female",
+    "email": "annettecoffey@musanpoly.com",
+    "credits": 0,
+    "friends": [
+      {
+        "id": 0,
+        "name": "Angie Manning"
+      },
+      {
+        "id": 1,
+        "name": "Johnson Burgess"
+      },
+      {
+        "id": 2,
+        "name": "Cristina Meyer"
+      }
+    ]
+  },
+  {
+    "_id": "5a5e2d5928fb77714f961074",
+    "age": 20,
+    "name": "Kent Dillon",
+    "gender": "male",
+    "email": "kentdillon@musanpoly.com",
+    "credits": 0,
+    "friends": [
+      {
+        "id": 0,
+        "name": "Bradshaw Ward"
+      }
+    ]
+  },
+  {
+    "_id": "5a5e2d592d4a81082fc08959",
+    "age": 35,
+    "name": "Guzman Cooley",
+    "gender": "male",
+    "email": "guzmancooley@musanpoly.com",
+    "credits": 0,
+    "friends": [
+      {
+        "id": 0,
+        "name": "Ramos Noble"
+      },
+      {
+        "id": 1,
+        "name": "Avery Scott"
+      }
+    ]
+  },
+  {
+    "_id": "5a5e2d59d608812b1a8a8ab3",
+    "age": 15,
+    "name": "Carey Larson",
+    "gender": "male",
+    "email": "careylarson@musanpoly.com",
+    "credits": 0,
+    "friends": [
+      {
+        "id": 0,
+        "name": "Wise Martin"
+      }
+    ]
+  }
+];
+
+const adultsInfluencers = users.filter(
+  user => user.age >= 18 && user.friends.length >= 2
+);
+
+const sumAge = users.reduce((sum, user) => sum + user.age, 0);
+
+const usersWithCreditsGiven = users.map(user => {
+  if (user.friends.length >= 2) user.credits += 5;
+  return user;
+});

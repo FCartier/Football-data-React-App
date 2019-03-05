@@ -1,0 +1,26 @@
+$ag-icons-path: "../node_modules/ag-grid-community/src/styles/ag-theme-balham/icons/";
+
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-balham-dark/sass/ag-theme-balham-dark.scss";
+
+$header-font-color: #102029;
+$header-background-color: rgb(224, 103, 115);
+img {
+  max-width: 50%;
+  height: auto;
+}
+
+.container {
+  background-color: $header-background-color;
+  border-radius: 15px 15px 0;
+  margin: auto 15%;
+  width: 70%;
+}
+
+.header {
+  color: $header-font-color;
+  display: flex;
+  font-size: 0.7em;
+  justify-content: space-between;
+  margin: auto 3em;
+}

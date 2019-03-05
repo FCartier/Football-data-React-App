@@ -1,0 +1,19 @@
+function calculate(operator) {
+  return function(operande1) {
+    return function(operande2) {
+      switch (operator) {
+        case "+":
+          return operande1 + operande2;
+        case "*":
+          return operande1 * operande2;
+        case "-":
+          return operande1 - operande2;
+        case "/":
+          return operande1 / operande2;
+      }
+    };
+  };
+}
+
+calculate('+')(1)(2); // 3
+calculate('*')(2)(3); // 6

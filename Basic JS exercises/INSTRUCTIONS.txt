@@ -1,0 +1,8 @@
+Here you have two short JS exercises:
+
+- Filtering: Given a list of users, store in adultsInfluencers only the ones who have 18 or more years and 2 or more friends.
+Then store in sumAge the sum of the age of all the users.
+Lastly give them 5 credits if they have 2 or more friends. Store new user list in usersWithCreditsGiven without modifying the original users list.
+(tip: try to use a functional programming methods and do it as short as you can)
+
+- Calculate: In this exercise you have to implement a function which can be called and return the expected values.

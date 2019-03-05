@@ -1,0 +1,93 @@
+Here you'll find some general questions about JS. Answer them inline while trying to be short.
+Don't bother if you don't know an answer, it's better to leave it blank than to copy it from a google search.
+
+Q: What will the code below output to the console and why?
+
+(function(){
+  var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+
+A: The code will output 
+
+a defined? false
+b defined? true
+
+Because a = b = 3 is a shortcut for b = 3; var a = b; So "b" is a global variable while "a" is a local variable of the anonymous function.
+
+-
+
+Q: What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?
+
+A: 
+'use strict' alters the semantics of JavaScript to improve its resiliency and make it easier to understand what's going on when there are problems.
+It enforces stricter parsing and error handling.
+
+Its main benefits, when placed at the beginning of a JavaScript Source file are:
+	- Makes debugging easier by Converting mistakes into errors.
+	- Prevents accidental globals. It is no longer possible to assign a value to an undeclared variable.
+	- Eliminates the "this" coercion. Referencing a this value of null or undefined throws an error.
+
+-
+
+Q: What is a “closure” in JavaScript? Provide an example.
+
+A: It is a combination of a function encapsulated inside another function. The inner function will have access to the the outer's function scope. Closures are created every time a function is created, at function creation time.
+
+An exemple: 
+const counter = (counter) => () => counter++;
+
+Here we have implemented a counter. Then we can define two different counters using our counter
+const c1 = counter(0);
+c1(); // outputs 0
+c1(); // outputs 1
+c1(); // outputs 2
+
+const c2 = counter(0);
+c2(); // outputs 0
+c2(); // outputs 1
+
+c1(); // outputs 3
+
+So in this case, both c1 and c2 have access to a different local variable of the counter function, allowing the counters no to be linked.
+-
+
+Q: What is the difference between Class inheritance and prototypal inheritance?
+
+A: In Class inheritance, a class is a description of an object to be created. Creating a hierarchy of classes.
+For exemple :
+Animal -> Class
+Dog -> Class inheriting from Animal
+Labrador ->  Class inheriting from Dog
+
+Classical inheritance is limited to classes inheriting from other classes. However prototypal inheritance includes both prototypes inheriting from other prototypes and objects inheriting from prototypes
+
+- 
+
+Q: Explain Destructuring Assignment in ES6? Provide an example. Which is the result of [...[...'...']].length ?
+
+A: In ES6, Destructuring allows the extraction of data from an array or an object.
+
+Destructuring an array:
+
+const cars = ['Seat', 'Mercedes', 'Peugeot'];
+
+const [seat, mercedes, peugeot] = cars;
+
+While without Destructuring we would have needed to do :
+const seat    = cars[0];
+const mercedes  = cars[1];
+const peugeot = cars[2];
+
+Destructuring an object:
+
+const o = { price: 42, label: 'fork'}
+
+const { price, label } = o;
+
+While without destructuring :
+const price = o.price;
+const label = o.label;
+
+[...[...'...']].length returns 3. It uses the rest operator ... to create an array of string ['.', '.', '.'] and then uses the spread operator again but it doesn't affect the array as the elements are already separated to the maximum. So [...[...'...']].length is the same than ['.', '.', '.'].length.
