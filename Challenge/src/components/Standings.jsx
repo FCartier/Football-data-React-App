@@ -11,16 +11,13 @@ export class Standings extends React.Component {
     this.props.requestApiData();
   }
 
-  // I have faced an issue where sometimes the data props are empty,
-  // If you encounter this issue please use the dataset instead
   render() {
-    const totalStanding = this.props.data.standings[0]; //dataset.standings[0];
-    const matchDay = this.props.data.season.currentMatchday; //dataset.season.currentMatchday;
+    const totalStanding = this.props.standings;
     return totalStanding.table.length ? (
       <div className="container">
         <div className="header">
           <h1>Standings</h1>
-          <h1>Matchday {matchDay}</h1>
+          <h1>Matchday {this.props.matchDay}</h1>
         </div>
         <Table standings={totalStanding.table} />
       </div>
@@ -30,7 +27,10 @@ export class Standings extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ data: state.data });
+const mapStateToProps = state => ({
+  standings: state.data.standings[0],
+  matchDay: state.data.season.currentMatchday
+});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ requestApiData }, dispatch);
